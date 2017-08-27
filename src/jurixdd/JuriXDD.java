@@ -25,8 +25,6 @@ public class JuriXDD {
 	
 	protected static synchronized void playSound(final String url) {
 		  new Thread(new Runnable() {
-		  // The wrapper thread is unnecessary, unless it blocks on the
-		  // Clip finishing; see comments.
 		    public void run() {
 		      try {
 		        Clip clip = AudioSystem.getClip();
