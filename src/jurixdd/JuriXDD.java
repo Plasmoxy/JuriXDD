@@ -2,7 +2,8 @@ package jurixdd;
 
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
-import java.io.File;
+import java.io.BufferedInputStream;
+import java.io.InputStream;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
@@ -13,7 +14,7 @@ import javax.swing.JFrame;
 
 public class JuriXDD {
 	
-	protected static int THE_MIGHTY_FUCK_UP_CONSTANT = 50; // SET BELOW 50 FOR COMPLETE RAPE
+	protected static int THE_MIGHTY_FUCK_UP_CONSTANT = 90; // SET BELOW 90 FOR COMPLETE RAPE
 	
 	protected static JFrame frame;
 	protected static JuriPanel blyat;
@@ -29,10 +30,13 @@ public class JuriXDD {
 		    public void run() {
 		      try {
 		        Clip clip = AudioSystem.getClip();
-		        AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-		        		JuriXDD.class.getResourceAsStream(url)
-		        );
-		        clip.open(inputStream);
+		        
+		        InputStream audioSrc = getClass().getResourceAsStream("wilhelm.wav");
+		        InputStream bufferedIn = new BufferedInputStream(audioSrc);
+		        
+		        AudioInputStream ainputStream = AudioSystem.getAudioInputStream(bufferedIn);
+		        
+		        clip.open(ainputStream);
 		        clip.start(); 
 		      } catch (Exception e) {
 		        System.err.println(e.getMessage());
@@ -47,7 +51,7 @@ public class JuriXDD {
 		
 		frame = new JFrame("xDDDDDDDDDDDDDDDDDDDDD");
 		rand = new Random();
-		juri = ImageIO.read(new File(JuriXDD.class.getResource("juri.jpg").getFile()));
+		juri = ImageIO.read(JuriXDD.class.getResourceAsStream("juri.jpg"));
 		blyat = new JuriPanel(juri);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
