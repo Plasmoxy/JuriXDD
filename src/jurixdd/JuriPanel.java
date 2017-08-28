@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 public class JuriPanel extends JPanel {
 	
 	private static final long serialVersionUID = 2873059303672996998L;
+	//This is a comment <daft comment here>
 	private BufferedImage image;
 	
 	public JuriPanel(BufferedImage img) {
