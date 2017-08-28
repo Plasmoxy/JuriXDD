@@ -9,6 +9,8 @@ public class JuriPanel extends JPanel {
 	
 	private static final long serialVersionUID = 2873059303672996998L;
 	//This is a comment <daft comment here>
+	
+	// YIOBANY PIDAR CYKA BLYAT :
 	private BufferedImage image;
 	
 	public JuriPanel(BufferedImage img) {
