@@ -1,3 +1,3 @@
 # JuriXDD
 
-this is a very cancerous program please do not launch
+this is a very retarded program please launch
